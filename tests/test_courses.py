@@ -19,6 +19,8 @@ def test_empty_courses_list(chromium_page_with_state):
     empty_description = chromium_page_with_state.get_by_test_id('courses-list-empty-view-description-text')
     expect(empty_description).to_be_visible()
 
+@pytest.mark.courses
+@pytest.mark.regression
 def test_create_course(courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):
     create_course_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create')
 
