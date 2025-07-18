@@ -8,7 +8,7 @@ class BaseElement:
 
     def get_locator(self, nth: int = 0, **kwargs) -> Locator:
         locator = self.locator.format(**kwargs)
-        return self.page.get_by_test_id(locator).nth(nth)
+        return self.page.get_by_test_id(locator)
 
     def click(self, nth: int = 0, **kwargs):
         locator = self.get_locator(nth,**kwargs)
