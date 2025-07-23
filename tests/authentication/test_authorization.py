@@ -7,6 +7,9 @@ from tools.allure.tags import AllureTag
 from tools.allure.epics import AllureEpic
 from tools.allure.features import AllureFeature
 from tools.allure.stories import AllureStory
+from  tools.allure.parent_suite import AllureParentSuite
+from  tools.allure.suite import AllureSuite
+from  tools.allure.sub_suite import AllureSubSuite
 from allure_commons.types import Severity
 
 
@@ -16,6 +19,9 @@ from allure_commons.types import Severity
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.AUTHENTICATION)
 @allure.story(AllureStory.AUTHORIZATION)
+@allure.parent_suite(AllureParentSuite.LMS)
+@allure.suite(AllureSuite.AUTHENTICATION)
+@allure.parent_suite(AllureSubSuite.AUTHORIZATION)
 class TestAuthorization:
     @allure.tag(AllureTag.USER_LOGIN)
     @allure.title('User login with correct email and password')
